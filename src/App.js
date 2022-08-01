@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Header from "./components/Header";
+import Sections from "./components/Sections";
 
 function App() {
+  const [choice1, setChoice1] = useState(false);
+  const [choice2, setChoice2] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <Header titleProject="Tesla Project" />
+        <div className="container">
+          <div className="contain">
+        <Sections
+          choice1={choice1}
+          setChoice1={setChoice1}
+          choice2={choice2}
+          setChoice2={setChoice2}
+        />
+        </div>
+        </div>
+      </>
     </div>
   );
 }
